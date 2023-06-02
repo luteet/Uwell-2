@@ -1,0 +1,321 @@
+@@include("html/_header.html")
+
+	<main class="main">
+		<section class="hero container">
+			<div class="hero__bg" aria-hidden="true">
+				<div class="hero__bg--element">
+					<picture>
+						<source srcset="img/decor-1.avif" type="image/avif">
+						<source srcset="img/decor-1.webp" type="image/webp">
+						<img src="img/decor-1.png" alt="" width="0" height="0" loading="lazy">
+					</picture>
+				</div>
+				<div class="hero__bg--element">
+					<picture>
+						<source srcset="img/decor-2.avif" type="image/avif">
+						<source srcset="img/decor-2.webp" type="image/webp">
+						<img src="img/decor-2.png" alt="" width="0" height="0" loading="lazy">
+					</picture>
+				</div>
+			</div>
+			<div class="hero__content">
+				<h1 class="hero__title main-title">
+					Uwell – персональний сімейний лікар у телефоні
+				</h1>
+				<div class="hero__text">
+					<p>
+						Спробуй, як це працює, та переконайся в якості сервісу.
+					</p>
+				</div>
+				<div class="hero__footer">
+					<a href="#" class="hero__btn btn">
+						Познайомся з лікарем
+					</a>
+					<div class="hero__decor-text decor-accent-text _round">
+						<span>
+							Безкоштовна
+						</span>
+						<br>
+						<span>
+							консультація
+						</span>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="what-is container" id="about-us">
+			<h2 class="what-is__title title">
+				Що таке Uwell?
+			</h2>
+			<div class="what-is__text">
+				<p>
+					Це новий сервіс медичних послуг, який змінить твоє ставлення до лікарів. 
+				</p>
+				<p>
+					Ми робимо медицину <mark>простою, доступною і дієвою</mark> для кожного. Без зайвих кроків, паперів і запитань.
+				</p>
+			</div>
+		</section>
+		<section class="how-work container" id="how-work">
+			<h2 class="how-work__title title">
+				Як це працює?
+			</h2>
+			<ul class="how-work__steps-list">
+				<li class="how-work__step">
+					<h3>Обираєш формат підписки</h3>
+					<p>Щорічна, піврічна чи поквартальна з повним медичним супроводом</p>
+				</li>
+				<li class="how-work__step">
+					<h3>Активуєш підписку</h3>
+					<p>Все як з декларацією, тільки простіше та онлайн: фіксуємо за тобою лікаря і забезпечуємо всі документи, рецепти та передбачені медичною реформою послуги</p>
+				</li>
+				<li class="how-work__step _alt">
+					<h3>Користуєшся послугами свого лікаря, коли треба і скільки треба</h3>
+					<p>На зв’язку 24/7, безлімітна кількість консультацій, за фікс-ціною підписки без переплат</p>
+				</li>
+			</ul>
+			<div class="how-work__image">
+				<div class="how-work__image--body image-body">
+					<picture>
+						<source srcset="img/index/how-work/how-work-image.avif" type="image/avif">
+						<source srcset="img/index/how-work/how-work-image.webp" type="image/webp">
+						<img src="img/index/how-work/how-work-image.png" alt="" width="1077" height="1211" loading="lazy">
+					</picture>
+				</div>
+				<div class="how-work__image--decor">
+					<picture>
+						<source srcset="img/decor-3.avif" type="image/avif">
+						<source srcset="img/decor-3.webp" type="image/webp">
+						<img src="img/decor-3.png" alt="" width="0" height="0" loading="lazy">
+					</picture>
+				</div>
+			</div>
+			<div class="how-work__footer">
+				<div class="how-work__footer--col">
+					<h3 class="how-work__footer--title title _alt">
+						Спробуй, як це працює!
+					</h3>
+					<div class="how-work__footer--text">
+						<p>
+							З будь-якої точки України чи світу та отримуйте лише перевірені діагнози. 
+						</p>
+					</div>
+				</div>
+				<div class="how-work__footer--col">
+					<a href="#" class="how-work__footer--btn btn">
+						Отримати консультацію
+					</a>
+					<span class="how-work__footer--note">Перша консультація безкоштовно. </span>
+				</div>
+			</div>
+		</section>
+		<section class="differ container">
+			<h2 class="differ__title title">
+				Чим Uwell відрізняється від лікування, до якого ти звик?
+			</h2>
+			<div class="differ__block">
+				<svg width="30" height="30" viewBox="0 0 30 30">
+					<use xlink:href="img/sprites.svg#arrow-next"></use>
+				</svg>
+				<h3>Результатом</h3>
+				<p>Віддаєш нам своє питання по здоров’ю і більше не хвилюєшся. <br> Потрапити на прийом, взяти рецепт чи забронювати ліки в аптеці — все робимо ми.</p>
+			</div>
+		</section>
+		<section class="subscribe container" id="subscribe">
+			<div class="subscribe__bg" aria-hidden="true">
+				<div class="subscribe__bg--element">
+					<picture>
+						<source srcset="img/decor-1.avif" type="image/avif">
+						<source srcset="img/decor-1.webp" type="image/webp">
+						<img src="img/decor-1.png" alt="" width="0" height="0" loading="lazy">
+					</picture>
+				</div>
+			</div>
+			<h2 class="subscribe__title title">
+				Підписка з Uwell — це:
+			</h2>
+			<ul class="subscribe__list">
+				@@loop("html/_subscribe-item.html", [
+					{
+						"icon": '1',
+						"title": 'Сімейний лікар',
+						"text": "Закріплений за тобою фахівець, який відповідає за лікування від А до Я.",
+					},
+					{
+						"icon": '2',
+						"title": 'Асистент',
+						"text": "Фахівець з медичною освітою, що все організовує та заощаджує твій час",
+					},
+					{
+						"icon": '3',
+						"title": 'Електронні документи',
+						"text": "Рецепти, лікарняні і вся стандартна бюрократія без черг і за пару хвилин у телефоні.",
+					},
+					{
+						"icon": '4',
+						"title": 'Медичний супровід',
+						"text": "Підбираємо та записуємо до лікарів вузького профілю і забезпечуємо знижками на лікування в приватних закладах країни",
+					},
+				])
+			</ul>
+		</section>
+		<section class="price container" id="price">
+			<h2 class="price__title title">
+				Скільки це коштує?
+			</h2>
+			<div class="price__text large-text">
+				<p>
+					Активуй підписку, бронюй за собою лікаря і користуйся всіма перевагами сервісу.
+				</p>
+			</div>
+			<ul class="price__list">
+				<li class="price__card">
+					<h3>Річне списання</h3>
+					<strong>10$ /міс.</strong>
+					<a href="#">підписатися</a>
+				</li>
+				<li class="price__card">
+					<h3>піврічне списання</h3>
+					<strong>13$ /міс.</strong>
+					<a href="#">підписатися</a>
+				</li>
+				<li class="price__card">
+					<h3>квартальне списання</h3>
+					<strong>15$ /міс.</strong>
+					<a href="#">підписатися</a>
+				</li>
+			</ul>
+			<div class="price__decor-text">
+				Тільки до 01.08 піврічна та квартальна підписка за 10$ / міс
+			</div>
+		</section>
+		<section class="what-next container">
+			<div class="what-next__content">
+				<h2 class="what-next__title title">
+					Що далі?
+				</h2>
+				<div class="what-next__text large-text">
+					<p>
+						Після сплати завантажуй додаток і спілкуйся з лікарем по будь-яким питанням.
+					</p>
+				</div>
+				<ul class="what-next__steps">
+					<li>
+						<b>
+							Активуєш підписку
+						</b>
+					</li>
+					<li>
+						<b>
+							Завантажуєш і реєструєшся у додатку Uwell
+						</b>
+					</li>
+					<li>
+						<b>
+							Користуєшся безлімітно
+						</b>
+					</li>
+				</ul>
+			</div>
+			<div class="what-next__image">
+				<div class="what-next__image--body image-body">
+					<picture>
+						<source srcset="img/index/what-next/what-next-image.avif" type="image/avif">
+						<source srcset="img/index/what-next/what-next-image.webp" type="image/webp">
+						<img src="img/index/what-next/what-next-image.png" alt="" width="534" height="643" loading="lazy">
+					</picture>
+				</div>
+			</div>
+		</section>
+		<section class="partners container" id="our-partners">
+			<h2 class="partners__title title">
+				Партнери
+			</h2>
+			<div class="partners__slider splide">
+				<div class="partners__slider--track splide__track">
+					<ul class="partners__slider--list splide__list">
+						@@loop("html/_partners-item.html", [
+							{
+								"logo": '1'
+							},
+							{
+								"logo": '2'
+							},
+							{
+								"logo": '3'
+							},
+							{
+								"logo": '4'
+							},
+							{
+								"logo": '5'
+							},
+							{
+								"logo": '6'
+							},
+							{
+								"logo": '7'
+							},
+							{
+								"logo": '8'
+							},
+							{
+								"logo": '9'
+							},
+							{
+								"logo": '10'
+							},
+							{
+								"logo": '11'
+							},
+							{
+								"logo": '12'
+							},
+							{
+								"logo": '13'
+							},
+							{
+								"logo": '14'
+							},
+							{
+								"logo": '15'
+							},
+						])
+					</ul>
+				</div>
+			</div>
+		</section>
+		<section class="leave-question container _alt" id="contacts">
+			<div class="leave-question__body">
+				<div class="leave-question__content">
+					<h2 class="leave-question__title title">
+						Залишилися питання?
+					</h2>
+					<div class="leave-question__text large-text">
+						<p>
+							Обери зручний месенджер та задай їх медичній команді
+						</p>
+					</div>
+				</div>
+				<div class="leave-question__social">
+					<ul>
+						<li>
+							<a href="#" title="Telegram">
+								<img src="img/index/have-questions/have-questions-telegram.svg" width="90" height="90" loading="lazy" alt="">
+							</a>
+						</li>
+						<li>
+							<a href="#" title="Viber">
+								<img src="img/index/have-questions/have-questions-viber.svg" width="90" height="90" loading="lazy" alt="">
+							</a>
+						</li>
+					</ul>
+					<span class="leave-question__note">
+						Перша консультація безкоштовно. 
+					</span>
+				</div>
+			</div>
+		</section>
+	</main>
+
+@@include("html/_footer.html")

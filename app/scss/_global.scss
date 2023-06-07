@@ -42,6 +42,8 @@ body {
 	display: flex;
 	flex-direction: column;
 
+	padding-right: var(--popup-padding);
+
 	//padding-right: var(--popup-padding);
 
 	&._mob-menu-active {

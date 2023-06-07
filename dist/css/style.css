@@ -1105,16 +1105,24 @@
         grid-template-columns: 287px 1.15fr .85fr
     }
 }
-/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */.splide,.splide__container,.splide__slide,sub,sup {
-    position: relative
-}
-
-button,hr,input {
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */button,hr,input {
     overflow: visible
 }
 
 progress,sub,sup {
     vertical-align: baseline
+}
+
+.splide,.splide__container,.splide__slide,sub,sup {
+    position: relative
+}
+
+.popup,.splide {
+    visibility: hidden
+}
+
+.application-popup__title,.btn,.header__nav--list li,.hero__content,.txt-center {
+    text-align: center
 }
 
 body {
@@ -1278,10 +1286,6 @@ summary {
     width: 0
 }
 
-.splide {
-    visibility: hidden
-}
-
 .splide.is-initialized,.splide.is-rendered {
     visibility: visible
 }
@@ -1319,7 +1323,6 @@ summary {
 
 .splide__sr,.visually-hidden {
     width: 1px;
-    height: 1px;
     margin: -1px;
     overflow: hidden
 }
@@ -1327,6 +1330,7 @@ summary {
 .splide__sr {
     clip: rect(0 0 0 0);
     border: 0;
+    height: 1px;
     padding: 0;
     position: absolute
 }
@@ -1496,6 +1500,11 @@ summary {
 .splide__progress__bar {
     background: #ccc;
     height: 3px
+}
+
+.popup,.popup-bg {
+    height: 100%;
+    top: 0
 }
 
 .splide__slide:focus {
@@ -1698,7 +1707,8 @@ body {
     font-weight: 400;
     line-height: 150%;
     display: flex;
-    flex-direction: column
+    flex-direction: column;
+    padding-right: var(--popup-padding)
 }
 
 body._mob-menu-active,body._popup-active {
@@ -1745,7 +1755,6 @@ section {
     font-weight: 700;
     font-size: 1.125rem;
     line-height: 155.555556%;
-    text-align: center;
     text-transform: uppercase;
     background: #ff822e;
     border: 2px solid #ff822e;
@@ -1771,6 +1780,7 @@ section {
 
 .visually-hidden {
     position: absolute;
+    height: 1px;
     padding: 0;
     border: 0;
     white-space: nowrap;
@@ -1787,8 +1797,8 @@ section {
 }
 
 .main-title,.title {
-    font-family: var(--title-font);
-    font-size: 1.5rem
+    font-size: 1.5rem;
+    font-family: var(--title-font)
 }
 
 .decor-accent-text span {
@@ -1856,10 +1866,6 @@ section {
     color: var(--title-color)
 }
 
-.txt-center {
-    text-align: center
-}
-
 input::-webkit-input-placeholder,textarea::-webkit-input-placeholder {
     -webkit-transition: opacity .2s ease;
     transition: opacity .2s ease;
@@ -1897,6 +1903,137 @@ input:focus::-ms-input-placeholder,textarea:focus::-ms-input-placeholder {
 
 input:focus::placeholder,textarea:focus::placeholder {
     opacity: 0
+}
+
+.popup {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    z-index: 100;
+    opacity: 0;
+    transition: opacity .4s ease,visibility .4s ease;
+    -webkit-perspective: 400px;
+    perspective: 400px;
+    will-change: opacity
+}
+
+.popup._active._transition-none .popup-body,.popup._transition-none,.popup._transition-none .popup-body {
+    transition: none
+}
+
+.popup._active {
+    opacity: 1;
+    visibility: visible
+}
+
+.popup-wrapper {
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100%;
+    width: 100%;
+    z-index: 2;
+    display: flex
+}
+
+.popup-bg {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    background: #000;
+    opacity: .7
+}
+
+.popup-body {
+    margin: auto;
+    position: relative;
+    background: #fff;
+    overflow-y: auto;
+    max-height: calc(var(--svh) *100 - 30px);
+    max-width: 650px;
+    width: 100%;
+    border-radius: 14px;
+    z-index: 2
+}
+
+.application-popup__title span:not(:first-child),.hero__list li {
+    margin-top: 10px
+}
+
+.popup-close-btn {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    line-height: 100%;
+    width: 40px;
+    height: 40px;
+    background: #fff
+}
+
+.application-popup__social ul a,.book-doctor__social ul a {
+    height: 55px;
+    transition: background .3s ease;
+    fill: var(--white)
+}
+
+.popup-close-btn svg {
+    width: 50%
+}
+
+.application-popup__body-popup {
+    background: var(--primary-color-1);
+    padding: 60px var(--container-padding) 30px
+}
+
+.application-popup__close-popup-btn {
+    background: rgba(0,0,0,0);
+    fill: var(--white)
+}
+
+.application-popup__title {
+    color: var(--white);
+    font-family: var(--title-font);
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: -.01em;
+    font-size: 1.5rem
+}
+
+.application-popup__social ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: -5px;
+    padding-top: 25px
+}
+
+.application-popup__social ul li {
+    padding: 5px
+}
+
+.application-popup__social ul a {
+    width: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--accent)
+}
+
+.application-popup__social ul a:hover {
+    background: var(--accent-hover)
+}
+
+.application-popup__social ul a:active {
+    background: var(--accent-active)
+}
+
+.application-popup__social ul a svg {
+    width: 65%;
+    height: 65%
 }
 
 .header {
@@ -1989,8 +2126,7 @@ input:focus::placeholder,textarea:focus::placeholder {
 }
 
 .header__nav--list li {
-    width: 100%;
-    text-align: center
+    width: 100%
 }
 
 .header__nav--list li a {
@@ -2167,8 +2303,7 @@ input:focus::placeholder,textarea:focus::placeholder {
 
 .hero__content {
     max-width: 808px;
-    width: 100%;
-    text-align: center
+    width: 100%
 }
 
 .hero__title {
@@ -2333,7 +2468,7 @@ input:focus::placeholder,textarea:focus::placeholder {
     position: relative
 }
 
-.doctor-card__video--wrapper iframe {
+.doctor-card__video--wrapper video {
     position: absolute;
     left: 0;
     top: 0;
@@ -2394,7 +2529,7 @@ input:focus::placeholder,textarea:focus::placeholder {
         font-size: 2rem
     }
 
-    .title {
+    .application-popup__title,.title {
         font-size: 1.75rem
     }
 
@@ -2439,6 +2574,10 @@ input:focus::placeholder,textarea:focus::placeholder {
 
     .large-text {
         font-size: 1.175rem
+    }
+
+    .application-popup__title {
+        font-size: 2rem
     }
 
     .hero__text {
@@ -2505,6 +2644,10 @@ input:focus::placeholder,textarea:focus::placeholder {
 
     .large-text {
         font-size: 1.375rem
+    }
+
+    .application-popup__title {
+        font-size: 2rem
     }
 
     .header {

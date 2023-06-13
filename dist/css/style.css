@@ -190,7 +190,8 @@
 }
 
 .how-work__footer--col {
-    text-align: center
+    text-align: center;
+    align-self: center
 }
 
 .how-work__footer--col:nth-child(2) {
